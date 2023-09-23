@@ -4019,9 +4019,15 @@ const http = require('http')
            return
        }
        // 如果没有匹配，则返回404页面
-       res.writeHead(200, {'content-type': 'text/plain'});
-       res.write('404 Not Found\n')
-       res.end()
+       let resData = {
+               error: -1,
+               message: '返回失败',
+               data: {
+                   query: query
+               }
+           }
+           // 将对象转换为json字符串
+       res.end(JSON.stringify(resData));
    });
    // 设置服务器端口
    server.listen(PORT)
