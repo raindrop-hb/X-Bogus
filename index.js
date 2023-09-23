@@ -4008,7 +4008,7 @@ const http = require('http')
            // 返回的数据
            let resData = {
                error: 0,
-               author 'raindrop',
+               author: 'raindrop',
                github: 'https://github.com/raindrop-hb/',
                message: '返回成功',
                data: {
@@ -4023,7 +4023,7 @@ const http = require('http')
        // 如果没有匹配，则返回404页面
        let resData = {
                error: -1,
-               author 'raindrop',
+               author: 'raindrop',
                github: 'https://github.com/raindrop-hb/',
                message: '返回失败',
                data: {
