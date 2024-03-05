@@ -1,5 +1,5 @@
 /*raindrop
-* @Email:1580925557@qq.com
+* @Email:196329630@qq.com
 * https://github.com/raindrop-hb*/
 
 window=global;
