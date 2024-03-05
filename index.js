@@ -4006,6 +4006,7 @@ const http = require('http')
        res.setHeader('Content-type', 'application/json')
        if (method === 'GET'&&'form' in query) {
            // 返回的数据
+           const cookies = require('./cookie')
            let resData = {
                error: 0,
                author: 'raindrop',
@@ -4014,10 +4015,11 @@ const http = require('http')
                data: {
                    form: query['form'],
                    X_Bogus: getxb(query['form'])
-               }
+               },
+               cookie:cookies.ac_signature()
            }
            // 将对象转换为json字符串
-           res.end(JSON.stringify(resData));
+           res.end(JSON.stringify(resData).toString());
            return
        }
        // 如果没有匹配，则返回404页面
@@ -4031,7 +4033,7 @@ const http = require('http')
                }
            }
            // 将对象转换为json字符串
-       res.end(JSON.stringify(resData));
+       res.end(JSON.stringify(resData).toString());
    });
    // 设置服务器端口
    server.listen(PORT)
